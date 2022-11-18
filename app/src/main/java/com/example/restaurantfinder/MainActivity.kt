@@ -2,7 +2,9 @@ package com.example.restaurantfinder
 
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,25 +27,43 @@ import com.example.restaurantfinder.network.RestaurantService
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnSearch : Button
+    private lateinit var editTextSearchTerm : EditText
+    private lateinit var recyclerview : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerViewRestaurantList)
+        recyclerview = findViewById(R.id.recyclerViewRestaurantList)
         recyclerview.layoutManager = LinearLayoutManager(this)
 
-        btnSearch = findViewById<Button>(R.id.btnGetRestaurants)
+        btnSearch = findViewById(R.id.btnGetRestaurants)
+        editTextSearchTerm = findViewById(R.id.editTextSearchTerm)
+
+        // Trigger a search on action_done either in the soft keyboard,
+        // or use the Search button below.
+        editTextSearchTerm.setOnEditorActionListener { _, actionId: Int, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                onDoSearch()
+                false
+            } else {
+                false
+            }
+        }
 
         btnSearch.setOnClickListener {
-                val searchTerm = btnSearch.text.toString()
-                if (!searchTerm.isEmpty()) {
-                    // Get a list of restaurants fr the current search term
-                    RestaurantService().getRestaurants(searchTerm) {
-                        // Send the restaurant list to the Recycler View
-                        recyclerview.adapter = RecyclerViewAdapter(it)
-                    }
+                    onDoSearch()
                 }
+        }
+
+    private fun onDoSearch() {
+        val searchTerm = editTextSearchTerm.text.toString()
+        if (!searchTerm.isEmpty()) {
+            // Get a list of restaurants fr the current search term
+            RestaurantService().getRestaurants(searchTerm) {
+                // Send the restaurant list to the Recycler View
+                recyclerview.adapter = RecyclerViewAdapter(it)
+            }
         }
     }
 }

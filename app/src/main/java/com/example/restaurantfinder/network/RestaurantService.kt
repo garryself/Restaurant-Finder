@@ -36,22 +36,12 @@ class RestaurantService {
     }
 
     fun getRestaurants(place: String, callback: (result: List<Restaurant>) -> Unit) {
-        if (true) {
-            // Mock data
-            restaurantList.add(Restaurant("North Italia", 4.5, "2957 Michelson Dr, Irvine, CA 92612, United States", "AW30NDyswVS17UBaJ1ePAMaY75Hqa4adk39QD4QgqpP95ZNvq4kAS3BitsudCQXackSRlMVp5U8AkdkUTT3IXenMMc6EFGeO59CLmc3WhDrMb6TQWV5Kbsqn5jMV0yKyZXR4f2oLVygmaNirkQVF6tNJHTNeyVEoWySJLgoOh3d7oLOFZwKa"))
-            restaurantList.add(Restaurant("Porch & Swing", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 2", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 3", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 4", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 5", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 6", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 7", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 8", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            restaurantList.add(Restaurant("Porch & Swing 9", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
-            callback.invoke(restaurantList)
-            return
-        }
 
+//        // Mock data. Uncomment for testing to avoid hitting Places API repeatedly.
+//        restaurantList.add(Restaurant("North Italia", 4.5, "2957 Michelson Dr, Irvine, CA 92612, United States", "AW30NDyswVS17UBaJ1ePAMaY75Hqa4adk39QD4QgqpP95ZNvq4kAS3BitsudCQXackSRlMVp5U8AkdkUTT3IXenMMc6EFGeO59CLmc3WhDrMb6TQWV5Kbsqn5jMV0yKyZXR4f2oLVygmaNirkQVF6tNJHTNeyVEoWySJLgoOh3d7oLOFZwKa"))
+//        restaurantList.add(Restaurant("Porch & Swing", 4.1, "2010 Main St Suite 170, Irvine, CA 92614, United States", "AW30NDxTdxgt1URVCx6QsCxCfGXkzZnY1_urooUMgAVTbotxFQr_8ShsyZDwi4N0PFWx089PwHft-qgdFCY8vT7pNaVRiRPGi7QzYX9-o1rz44Z1g1r6DGoLAM8emb85AKfyoLcG5w3hoU0d7A3-qH1AC2VTYxrQKr1x8CMwaA1gPJbMzRSV"))
+//        callback.invoke(restaurantList)
+//        return
 
         getPlacesRequest()
             .getRestaurants(
